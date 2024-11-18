@@ -1,0 +1,26 @@
+[
+  {
+    "numCompte": 2,
+    "solde": 150.0,
+    "client": {
+      "nom": "MAKHLOUL",
+      "prenom": "Ilyas"
+    }
+  },
+  {
+    "numCompte": 1,
+    "solde": 1562.0,
+    "client": {
+      "nom": "BOURAZZA",
+      "prenom": "Ahmed"
+    }
+  },
+  {
+    "numCompte": 3,
+    "solde": 10000.0,
+    "client": {
+      "nom": "ammidouah",
+      "prenom": "Adnan"
+    }
+  }
+]

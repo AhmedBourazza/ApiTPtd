@@ -6,6 +6,8 @@ import com.google.gson.GsonBuilder;
 import model.Client;
 import model.Compte;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -53,13 +55,19 @@ public class Main {
             System.out.println(compte);
         }
         System.out.println("-----------------------------------------------");
-
+        System.out.println("Affichage des comptes triés en JSON");
         // Affichage des comptes triés en JSON
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         String comptesJson = gson.toJson(comptesTries);
 
         System.out.println("\nListe des comptes triés (format JSON) :");
         System.out.println(comptesJson);
-
+        // Utilisation de FileWriter pour sauvegarder le JSON dans un fichier
+        try (FileWriter fileWriter = new FileWriter("storage.json")) {
+            fileWriter.write(comptesJson);  // Écriture du JSON dans le fichier
+            System.out.println("\nLes comptes ont été sauvegardés dans le fichier 'storage.json' !");
+        } catch (IOException e) {
+            System.out.println("Une erreur est survenue lors de l'écriture dans le fichier : " + e.getMessage());
+        }
     }
 }
